@@ -1,5 +1,5 @@
 const textDb = require('../../models/textbooks');
-// const genresDb = require('../../models/genres')
+const genresDb = require('../../models/genres')
 
 function getAll (req, res, next) {
   textDb.getAllTexts()
@@ -60,11 +60,23 @@ function destroy(req, res) {
     })
 }
 
+function getGenres(req, res, next) {
+  genresDb.getAllGenres()
+  .then(data => {
+    res.locals.genres = data;
+    next();
+  })
+  .catch(err=> {
+    next(err);
+  })
+}
 module.exports = {
   getAll,
   getOne,
   create,
   edit,
-  update
+  update,
+  destroy,
+  getGenres
 
 }

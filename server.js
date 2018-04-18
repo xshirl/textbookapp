@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
   res.render('home/index');
 })
 
-// app.use('/genres', genresRouter);
+app.use('/genres', genresRouter);
 app.use('/textbooks', textbooksRouter);
 
 app.listen(PORT, () => {
