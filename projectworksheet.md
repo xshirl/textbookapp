@@ -15,7 +15,7 @@ the mission of the app with pictures. I will have a textbooks page where I have 
 to the individual page of the textbook. In the individual page, I will have edit, delete, and add to cart buttons. Add to cart will have a form 
 with a GET method that brings the information of the textbook to the add to cart page. 
 
-Depending on time, I will include a log in/ registration form. 
+Depending on time, I will include a log in/ registration form. I will also include a Khan Academy API depending on time. 
 
 
 ## Wireframes
