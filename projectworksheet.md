@@ -9,11 +9,7 @@ This schedule will be used to keep track of your progress throughout the week an
 
 Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
 
-I am making a textbook rental app. I will have a database of textbooks with two tables: textbooks and genres. Textbook table will have an id,
-title, author, image, genre, price columns. Genres table will have id, name, image columns. I will have a homepage where I describe
-the mission of the app with pictures. I will have a textbooks page where I have all the textbooks and their information and clicking on them will link
-to the individual page of the textbook. In the individual page, I will have edit, delete, and add to cart buttons. Add to cart will have a form 
-with a GET method that brings the information of the textbook to the add to cart page. And when you press Buy, the books will be added to a My Books page with a star rating. The user can edit the star rating and delete the textbook on their individual My Textbook page.
+I am making a textbook rental app. I will have a database of textbooks with two tables: textbooks and genres. Textbook table will have an id, title, author, image, genre, price columns, rating. Genres table will have id, name, image columns. I will have a homepage where I describe the mission of the app with pictures. I will have a textbooks page where I have all the textbooks and their information and clicking on them will link to the individual page of the textbook. In the individual page, I will have add to cart buttons. Add to cart will have a form with a GET method that brings the information of the textbook to the add to cart page. And when you press Buy, the books will be added to a My Books page with a star rating. The user can edit the star rating and delete the textbook on their individual My Textbook page. There will also be Add new Textbooks that will be add to a database of textbooks.
 
 Depending on time, I will include a log in/ registration form. I will also include a Khan Academy API or some other education API depending on time. Also depending on time, I will incorporate a reviews form. 
 
