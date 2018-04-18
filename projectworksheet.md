@@ -15,7 +15,7 @@ the mission of the app with pictures. I will have a textbooks page where I have 
 to the individual page of the textbook. In the individual page, I will have edit, delete, and add to cart buttons. Add to cart will have a form 
 with a GET method that brings the information of the textbook to the add to cart page. 
 
-Depending on time, I will include a log in/ registration form. I will also include a Khan Academy API depending on time. 
+Depending on time, I will include a log in/ registration form. I will also include a Khan Academy API or some other education API depending on time. 
 
 
 ## Wireframes
@@ -37,7 +37,7 @@ Include a full list of features that have been prioritized based on the `Time an
 - textbooks and genres routes -2 hrs
 - textbooks and genres views and homepage and cart views - 5 hrs
 - user login/registration auth model/controller/view/route - 10 hrs
-- Khan Academy API - 5 hrs
+- Khan Academy API or other education API- 5 hrs
 
 ## MVP 
 
