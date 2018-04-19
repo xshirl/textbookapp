@@ -10,6 +10,14 @@ There will also be Add new Textbooks that will be add to a database of textbooks
 
 Depending on time, I will include a log in/ registration form. I will also include a Khan Academy API or some other education API depending on time. Also depending on time, I will incorporate a reviews form. 
 
+Pages:
+Home, Textbooks, Genres, Add New Textbook, Cart, My Textbooks
+
+User Stories:
+- maybe log in and register
+- add textbook to cart
+- "buy" textbook in cart and have it added to My Textbooks Shelf
+- Edit and Delete textbook in cart and My Textbooks
 
 ## Wireframes
 
