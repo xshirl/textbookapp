@@ -58,6 +58,11 @@ function myTexts() {
   return query;
 
 }
+
+function addtoCart() {
+  const query = db.any(
+    `INSERT INTO cart (`)
+}
 module.exports = {
   getAllTexts,
   getOneText,
