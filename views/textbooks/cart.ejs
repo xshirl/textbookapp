@@ -1,0 +1,12 @@
+<% include ../../partials/boilerplate %>
+
+<% textbooks.forEach((textbook) => { %>
+
+<div class="textbook">
+  <a href="/textbooks/cart/<%=textbook.id%>"><img src="<%= textbook.img %>" width= "300"></a>
+  <h1> <%=textbook.title%></h1>
+</div>
+<% }) %>
+
+
+<% include ../../partials/end %>

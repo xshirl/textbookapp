@@ -1,0 +1,45 @@
+<% include ../../partials/boilerplate %>
+
+
+<div class="textbook">
+  <img class="text" src="<%= textbook.img %>" width= "300">
+  <h1> <%=textbook.title%></h1>
+  <p> <%=textbook.author%> </p>
+  <p> Price: <%=textbook.price%> </p>
+<form action="/textbooks/myTextbooks/<%=textbook.id%>/edit" class='put' method="POST">
+ <input type="hidden" name="title" value="<%= textbook.title%>" />
+  <input type="hidden" name="author" value="<%= textbook.author%>" />
+  <input type="hidden" name="price" value="<%= textbook.price%>" />
+  <input type="hidden" name="rating" value="<%= textbook.rating%>" />
+  <input type="hidden" name="img" value="<%= textbook.img%>" />
+  <input type="hidden" name="isincart" value="true">
+  <input type="hidden" name="isrented" value="true">
+  <input type="hidden" name="genre_id" value="<%=textbook.genre_id%>">
+  <input type="submit" class="editlink" value="Rent">
+  </form>
+
+  <form action="/textbooks/myTextbooks/<%=textbook.id%>/edit" class='put' method="GET">
+  <input type="submit" class="editlink" value="Edit">
+  </form>
+  <br>
+  <form action="/textbooks/cart/<%=textbook.id%>?_method=PUT" class='delete' method="POST">
+  <input type="hidden" name="title" value="<%= textbook.title%>" />
+  <input type="hidden" name="author" value="<%= textbook.author%>" />
+  <input type="hidden" name="price" value="<%= textbook.price%>" />
+  <input type="hidden" name="rating" value="<%= textbook.rating%>" />
+  <input type="hidden" name="img" value="<%= textbook.img%>" />
+  <input type="hidden" name="isincart" value="false">
+  <input type="hidden" name="isrented" value="true">
+  <input type="hidden" name="genre_id" value="<%=textbook.genre_id%>">
+  <input type="submit" class="dellink" value="Delete">
+  </form>
+  <br><br>
+  <% for (let i = 0; i < textbook.rating; i++) { %>
+  <i class="fa fa-star">
+  <% } %>
+  <br><br>
+
+</div>
+
+
+<% include ../../partials/end %>

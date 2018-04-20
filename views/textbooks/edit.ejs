@@ -1,0 +1,25 @@
+<% include ../../partials/boilerplate %>
+
+<div class="form-page">
+<div class="add">
+<img src="<%= textbook.img%>" width="300">
+<form action="/textbooks/myTextbooks/<%=textbook.id%>?_method=PUT" method="POST">
+  <input type="text" name="title" value="<%= textbook.title%>" /><br>
+  <input type="text" name="author" value="<%= textbook.author%>" /><br>
+  <input type="text" name="price" value="<%= textbook.price%>" /><br>
+  <input type="text" name="rating" value="<%= textbook.rating%>" /><br>
+  <input type="text" name="img" value="<%= textbook.img%>" /><br>
+  <input type="hidden" name="isincart" value="true">
+  <input type="hidden" name="isrented" value="false">
+  <select name="genre_id">
+    <% genres.forEach((genre) => { %>
+      <option value="<%=genre.id%>"><%=genre.name%></option>
+    <% }) %>
+  </select> <br>
+  <input type="submit" value="Edit" />
+</form>
+</div>
+<a href="/textbooks"> Back to Textbooks </a>
+</div>
+
+<% include ../../partials/end %>

@@ -49,14 +49,14 @@ function update(req, res, next) {
   req.body.id = req.params.id;
   textDb.updateText(req.body)
     .then(data => {
-      res.redirect(`/textbooks/myTextbooks/${req.body.id}`);
+      res.redirect(`/textbooks/cart/${req.body.id}`);
     })
 }
 
 function destroy(req, res) {
   textDb.deleteText(req.params.id)
     .then(() => {
-      res.redirect(`/textbooks/myTextbooks`);
+      res.redirect(`/textbooks/cart`);
     })
 }
 
@@ -70,6 +70,29 @@ function getGenres(req, res, next) {
     next(err);
   })
 }
+
+function getCartTexts(req, res, next) {
+  textDb.cartTexts()
+  .then(data => {
+     console.log(data);
+    res.locals.cartTexts = data;
+    next();
+  })
+  .catch(err => {
+    next(err);
+  })
+}
+
+function getMyTexts(req, res, next) {
+  textDb.myTexts()
+  .then(data => {
+    res.locals.myTexts = data;
+    next();
+  })
+  .catch(err => {
+    next(err);
+  })
+}
 module.exports = {
   getAll,
   getOne,
@@ -77,6 +100,8 @@ module.exports = {
   edit,
   update,
   destroy,
-  getGenres
+  getGenres,
+  getCartTexts,
+  getMyTexts
 
 }

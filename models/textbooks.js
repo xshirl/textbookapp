@@ -2,7 +2,7 @@ const db = require('../config/connection');
 
 function getAllTexts() {
   const query = db.manyOrNone(`
-    SELECT textbooks.title, textbooks.author, textbooks.rating, textbooks.image, genres.name
+    SELECT textbooks.id, textbooks.title, textbooks.author, textbooks.rating, textbooks.img, genres.name
     FROM textbooks
     JOIN genres ON genres.id = textbooks.genre_id
     `);
@@ -19,8 +19,8 @@ function getOneText(id) {
 function createText(textbook) {
   const query = db.one(`
     INSERT INTO textbooks
-    (title, author, rating, image, genre_id)
-    VALUES ($/title/, $/author/, $/rating/, $/image/, $/genre_id/)
+    (title, author, price, rating, img, isincart, isrented, genre_id)
+    VALUES ($/title/, $/author/, $/price/, $/rating/, $/img/, false, false, $/genre_id/)
     RETURNING *
     `, textbook);
   return query;
@@ -29,8 +29,8 @@ function createText(textbook) {
 function updateText(textbook) {
   const query = db.one(`
     UPDATE textbooks
-    SET title = $/title/, author = $/author/, rating = $/rating,
-    image = $/image/, genre_id = $/genre_id
+    SET title = $/title/, author = $/author/, price = $/price/, rating = $/rating/,
+    img = $/img/, isincart = $/isincart/, isrented = $/isrented/, genre_id = $/genre_id/
     WHERE id = $/id/
     RETURNING *
     `, textbook);
@@ -40,14 +40,30 @@ function updateText(textbook) {
 function deleteText(id) {
   const query = db.none(`
     DELETE FROM textbooks
-    WHERE id = $1`, id);
+    WHERE isincart= true AND id = $1`, id);
   return query;
 }
 
+function cartTexts() {
+  const query = db.manyOrNone(`
+    SELECT * FROM textbooks
+    WHERE isincart = true`);
+  return query;
+}
+
+function myTexts() {
+  const query = db.any(`
+    SELECT * FROM textbooks
+    WHERE isincart = true AND isrented = true`);
+  return query;
+
+}
 module.exports = {
   getAllTexts,
   getOneText,
   createText,
   updateText,
-  deleteText
+  deleteText,
+  cartTexts,
+  myTexts
 }

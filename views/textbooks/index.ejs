@@ -3,7 +3,8 @@
 <% textbooks.forEach((textbook) => { %>
 
 <div class="textbook">
-  <img src="<%= textbook.image %>" width= "300">
+  <a href="/textbooks/<%=textbook.id%>"><img src="<%= textbook.img %>" width= "300"></a>
+  <h1> <%=textbook.title%></h1>
 </div>
 <% }) %>
 

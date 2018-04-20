@@ -10,6 +10,20 @@ function sendOneText(req, res) {
   })
 }
 
+function sendOneTextCart(req, res) {
+  res.render(`textbooks/cart`, {
+    genres: res.locals.genres,
+    textbook: res.locals.textbook
+  })
+}
+
+function sendEditDelete(req, res) {
+  res.render(`textbooks/showeditdelete`, {
+    genres: res.locals.genres,
+    textbook: res.locals.textbook
+  })
+}
+
 function sendCreateText (req, res) {
   textbook = res.locals.newTextbook;
   res.redirect(`textbooks/${textbook.id}`);
@@ -23,13 +37,25 @@ function sendGenres(req, res) {
 
 function editText(req, res) {
   textbook = res.locals.textbook;
-  res.render('students/edit', {
+  res.render('textbooks/edit', {
     textbook: res.locals.textbook
   })
 }
 
 function deleteText(req, res) {
-  res.redirect('textbooks/myTextbooks')
+  res.redirect('/textbooks/cart')
+}
+
+function sendCartTexts(req, res) {
+  res.render('textbooks/cart', {
+    textbooks: res.locals.cartTexts
+  })
+}
+
+function sendMyTexts(req, res) {
+  res.render('textbooks/mybooks', {
+    textbooks: res.locals.myTexts
+  })
 }
 module.exports = {
   sendTexts,
@@ -37,5 +63,9 @@ module.exports = {
   sendCreateText,
   sendGenres,
   editText,
-  deleteText
+  deleteText,
+  sendOneTextCart,
+  sendEditDelete,
+  sendCartTexts,
+  sendMyTexts
 }

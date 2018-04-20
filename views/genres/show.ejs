@@ -1,0 +1,20 @@
+<% include ../../partials/boilerplate %>
+
+<div class="genre">
+  <h1><%=genre.name%></h1>
+  <img src="<%=genre.image%>" width="100%" alt="<%=genre.name%>" />
+</div>
+
+<div class="row">
+<% textbooks.forEach((textbook) => { %>
+<div class="textbook">
+  <h1><%=textbook.title%></h1>
+  <img src="<%=textbook.img%>" width="250"/>
+  <p> Price: <%=textbook.price%></p>
+</div>
+
+<% }) %>
+
+</div>
+
+<% include ../../partials/end %>
