@@ -2,9 +2,10 @@ const db = require('../config/connection');
 
 function getAllTexts() {
   const query = db.manyOrNone(`
-    SELECT textbooks.id, textbooks.title, textbooks.author, textbooks.rating, textbooks.img, genres.name
+    SELECT textbooks.id, textbooks.title, textbooks.author, textbooks.price, textbooks.rating, textbooks.img, genres.name
     FROM textbooks
     JOIN genres ON genres.id = textbooks.genre_id
+    ORDER BY textbooks.id
     `);
   return query;
 }

@@ -49,7 +49,7 @@ function update(req, res, next) {
   req.body.id = req.params.id;
   textDb.updateText(req.body)
     .then(data => {
-      res.redirect(`/textbooks/cart/${req.body.id}`);
+      res.redirect(`/textbooks/cart`);
     })
 }
 

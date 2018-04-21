@@ -33,6 +33,7 @@ function getTextGenre(req, res, next) {
   })
 }
 
+
 module.exports = {
   getAll,
   getOne,

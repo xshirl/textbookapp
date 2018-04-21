@@ -16,10 +16,11 @@ function getOneGenre(id) {
 function getTextGenre(id) {
   const query = db.any(`
     SELECT * FROM textbooks
-    JOIN genres ON genres.id = textbooks.genre_id
     WHERE textbooks.genre_id = $1`, id);
   return query;
 }
+
+
 
 module.exports = {
   getAllGenres,
