@@ -1,10 +1,10 @@
-\c textbooks_db
+
 
 DROP TABLE IF EXISTS genres CASCADE;
 DROP TABLE IF EXISTS textbooks CASCADE;
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS carts CASCADE;
-DROP TABLE IF EXISTS carts_products CASCADE;
+DROP TABLE IF EXISTS cart_products CASCADE;
 
 CREATE TABLE genres (
   id SERIAL PRIMARY KEY,
@@ -46,4 +46,4 @@ CREATE TABLE cart_products (
   id SERIAL PRIMARY KEY,
   cart_id INTEGER REFERENCES carts(id),
   product_id INTEGER REFERENCES textbooks(id)
-)
+);
