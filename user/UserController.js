@@ -1,3 +1,5 @@
+//taken from drake's lesson on user auth
+
 const bcrypt = require('bcrypt');
 const User   = require('./model/User');
 const bodyParser = require('body-parser')

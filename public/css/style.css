@@ -146,7 +146,7 @@ form input[type=email]:focus, form select:focus {
   background-color: blue;
 }
 
-.editlink, .dellink {
+.editlink, .dellink, .cart {
   padding:10px;
   background-color:blue;
   font-family:Ablefont, Irish Grover;

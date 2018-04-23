@@ -1,3 +1,5 @@
+//taken from drake's/jason's lesson on user auth https://git.generalassemb.ly/wdi-nyc-rover/js-node-sessions-lesson
+
 const bcrypt = require('bcrypt');
 const User   = require('../model/User');
 
