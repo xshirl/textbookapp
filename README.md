@@ -15,7 +15,7 @@ https://textbookapp.herokuapp.com/
 User Stories:
 - log in and register
 - add textbook to cart
-- Edit and delete textbook in cart
+- can edit and delete book from cart when you click on the book in the cart
 - Add and delete textbook from site
 
 ## Wireframes
