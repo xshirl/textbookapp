@@ -1,4 +1,4 @@
--- \c textbooks_db
+\c textbooks_db
 
 -- DROP TABLE IF EXISTS genres CASCADE;
 -- DROP TABLE IF EXISTS textbooks CASCADE;
