@@ -36,7 +36,8 @@ Include images of your wireframes.
 express-session, dotenv
 
 ## Code
-```<form action="/textbooks/cart/<%=textbook.id%>?_method=PUT" class='delete' method="POST">
+```
+<form action="/textbooks/cart/<%=textbook.id%>?_method=PUT" class='delete' method="POST">
   <input type="hidden" name="title" value="<%= textbook.title%>" />
   <input type="hidden" name="author" value="<%= textbook.author%>" />
   <input type="hidden" name="price" value="<%= textbook.price%>" />
