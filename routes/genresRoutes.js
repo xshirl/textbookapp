@@ -1,4 +1,4 @@
-const genresRouter = require('express').Router();
+const genresRouter = require('express').Router(); //creates router
 
 const genresController = require('../controllers/genres/genresController');
 const genresViewController = require('../controllers/genres/genresViewController');
@@ -13,9 +13,9 @@ function sendError(err, req, res, next) {
 }
 
 genresRouter.route('/')
-.get(genresController.getAll, genresViewController.sendGenres)
+.get(genresController.getAll, genresViewController.sendGenres) //gets all genres on /genres page
 
-genresRouter.route('/:id')
+genresRouter.route('/:id') //gets all textbook with same genre id
 .get(genresController.getOne, genresController.getTextGenre, genresViewController.sendTextGenre)
 
 module.exports = genresRouter;

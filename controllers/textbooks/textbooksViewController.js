@@ -43,7 +43,7 @@ function editText(req, res) {
 }
 
 function deleteText(req, res) {
-  res.redirect('/textbooks/cart')
+  res.redirect('/textbooks/')
 }
 
 function sendCartTexts(req, res) {

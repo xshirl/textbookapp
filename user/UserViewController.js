@@ -18,7 +18,7 @@ function handleLogout(req, res) {
 }
 
 function handleDelete(req, res) {
-  res.redirect('/quotes');
+  res.redirect('/');
 }
 
 module.exports = {

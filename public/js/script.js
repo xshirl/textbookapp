@@ -1,8 +1,8 @@
 console.log('ready');
-
+// makes slider
 var slides = document.querySelectorAll("#slides .slide");
 var currentSlide = 0;
-var slideInterval = setInterval(nextSlide, 2000);
+var slideInterval = setInterval(nextSlide, 3000); //every 3s new slide shows
 
 function nextSlide() {
   slides[currentSlide].className = 'slide';

@@ -18,7 +18,9 @@
   <input type="hidden" name="genre_id" value="<%=textbook.genre_id%>">
   <input type="submit" class="cart" value="Add to Cart">
   </form>
-
+<form action="/textbooks/<%=textbook.id%>?_method=DELETE" method="POST">
+<input type="submit" class="dellink" value="Delete">
+</form>
   <br><br>
 
   <br><br>

@@ -1,6 +1,6 @@
 const db = require('../config/connection');
 
-function getAllTexts() {
+function getAllTexts() { //returns all textbooks data
   const query = db.manyOrNone(`
     SELECT textbooks.id, textbooks.title, textbooks.author, textbooks.price, textbooks.rating, textbooks.img, genres.name
     FROM textbooks
@@ -10,14 +10,14 @@ function getAllTexts() {
   return query;
 }
 
-function getOneText(id) {
+function getOneText(id) { //return one book's data by id
   const query = db.one(`
     SELECT * FROM textbooks
     WHERE id = $1`, id);
   return query;
 }
 
-function createText(textbook) {
+function createText(textbook) { //creates textbook using post form
   const query = db.one(`
     INSERT INTO textbooks
     (title, author, price, rating, img, isincart, isrented, genre_id)
@@ -27,7 +27,7 @@ function createText(textbook) {
   return query;
 }
 
-function updateText(textbook) {
+function updateText(textbook) { //updates textbook data
   const query = db.one(`
     UPDATE textbooks
     SET title = $/title/, author = $/author/, price = $/price/, rating = $/rating/,
@@ -38,38 +38,34 @@ function updateText(textbook) {
   return query;
 }
 
-function deleteText(id) {
+function deleteText(id) { //deletes textbook by id
   const query = db.none(`
     DELETE FROM textbooks
-    WHERE isincart= true AND id = $1`, id);
+    WHERE id = $1`, id);
   return query;
 }
 
-function cartTexts() {
+function cartTexts() { //returns all books where isincart = true
   const query = db.manyOrNone(`
     SELECT * FROM textbooks
     WHERE isincart = true`);
   return query;
 }
 
-function myTexts() {
-  const query = db.any(`
-    SELECT * FROM textbooks
-    WHERE isincart = true AND isrented = true`);
-  return query;
+// function myTexts() {
+//   const query = db.any(`
+//     SELECT * FROM textbooks
+//     WHERE isincart = true AND isrented = true`);
+//   return query;
 
-}
+// }
 
-function addtoCart() {
-  const query = db.any(
-    `INSERT INTO cart (`)
-}
+
 module.exports = {
   getAllTexts,
   getOneText,
   createText,
   updateText,
   deleteText,
-  cartTexts,
-  myTexts
+  cartTexts
 }

@@ -1,23 +1,21 @@
-# textbookapp
+# Textbook Rental App
 
+AEXUS Textbooks:
+I am making a textbook rental app. I have a database of textbooks with two tables: textbooks and genres. Textbook table has an id,
+title, author, image, genre, price columns, rating. Genres table has an id, name, image columns. 
+There is a page for genres and a page for textbooks. There is also a page for each textbook.
+There is an Add New Textbook page and a Cart page for when you added a textbook to the cart.
 
-I am making a textbook rental app. I will have a database of textbooks with two tables: textbooks and genres. Textbook table will have an id,
-title, author, image, genre, price columns, rating. Genres table will have id, name, image columns. I will have a homepage where I describe
-the mission of the app with pictures. I will have a textbooks page where I have all the textbooks and their information and clicking on them will link
-to the individual page of the textbook. In the individual page, I will have add to cart buttons. Add to cart will have a form 
-with a GET method that brings the information of the textbook to the add to cart page. The add to cart page will have edit and delete button and buy button. And when you press Buy, the books will be added to a My Books page with a star rating. The user can edit the star rating and delete the textbook on their individual My Textbook page.
-There will also be Add new Textbooks that will be add to a database of textbooks. 
+Video Presentation:
 
-Depending on time, I will include a log in/ registration form. I will also include a Khan Academy API or some other education API depending on time. Also depending on time, I will incorporate a reviews form. 
-
-Pages:
-Home, Textbooks, Genres, Add New Textbook, Cart, My Textbooks
+Link to App:
+https://textbookapp.herokuapp.com/
 
 User Stories:
-- maybe log in and register
+- log in and register
 - add textbook to cart
-- "buy" textbook in cart and have it added to My Textbooks Shelf
-- Edit and Delete textbook in cart and My Textbooks
+- Edit and delete textbook in cart
+- Add and delete textbook from site
 
 ## Wireframes
 
@@ -26,32 +24,44 @@ Include images of your wireframes.
 ![:image](https://github.com/xshirl/textbookapp/blob/master/images/wireframe2.jpg)
 ![:image](https://github.com/xshirl/textbookapp/blob/master/images/wireframe3.jpg)
 
-## Priority Matrix
+##Technologies
+- Node.js
+- Express.js
+- PostGreSQL
+- Javascript
+- EJS/HTML
+- CSS
+- Nodemon, bcrypt, pg-promise, morgan, body-parser, nodemon, ejs, method-override,
+express-session, dotenv
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matix.  
+## Code
+```<form action="/textbooks/cart/<%=textbook.id%>?_method=PUT" class='delete' method="POST">
+  <input type="hidden" name="title" value="<%= textbook.title%>" />
+  <input type="hidden" name="author" value="<%= textbook.author%>" />
+  <input type="hidden" name="price" value="<%= textbook.price%>" />
+  <input type="hidden" name="rating" value="<%= textbook.rating%>" />
+  <input type="hidden" name="img" value="<%= textbook.img%>" />
+  <input type="hidden" name="isincart" value="false">
+  <input type="hidden" name="isrented" value="false">
+  <input type="hidden" name="genre_id" value="<%=textbook.genre_id%>">
+  <input type="submit" class="dellink" value="Delete">
+  </form>```
+This updates the isincart column to false so when I update the book, it deletes it
+from the cart. I use the PUT method instead of DELETE method here because I
+don't want to delete it from the entire database. I use DELETE method elsewhere
+on the individual book page to delete it from the database. 
 
-- Set up database - createdb textbooks_db  
-- Set up tables - textbooks and genres - 1 hour
-- Set up server.js - 1hr
-- textbooks and genres models - 2 hrs
-- textbooks and genres controllers - 2 hrs
-- textbooks and genres routes -2 hrs
-- textbooks and genres views and homepage and cart views - 5 hrs
-- user login/registration auth model/controller/view/route - 10 hrs
-- Khan Academy API or other education API- 5 hrs
+## Additional features
+I plan to create a cart for each user so that each user can check out items. This
+means creating a cart table and a cartproducts table that joins the carts and the
+products. 
 
-## MVP 
+##Instructions
+1. Git clone the repo.
+2. ```createdb textbooks_db ```
+3. ```psql -f db/schema.sql```
+4. ```psql -f db/seed.sql```
+5. npm i
+6. App available on localhost:3001
 
-Include the full list of features that will be part of your MVP 
 
-- Set up database - createdb textbooks_db
-- Set up tables - textbooks and genres
-- Set up server.js 
-- textbooks and genres models
-- textbooks and genres controllers
-- textbooks and genres routes
-- textbooks and genres views
-
-## POST MVP
-- user login/registration auth model/controller/view/route
-- Khan Academy API 

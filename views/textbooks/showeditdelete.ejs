@@ -7,7 +7,7 @@
   <p> Price: <%=textbook.price%> </p>
   <p> Rating: <%=textbook.rating %> </p>
 
-  <form action="/textbooks/myTextbooks/<%=textbook.id%>/edit" class='put' method="GET">
+  <form action="/textbooks/cart/<%=textbook.id%>/edit" class='put' method="GET">
   <input type="submit" class="editlink" value="Edit">
   </form>
   <br>
@@ -18,7 +18,7 @@
   <input type="hidden" name="rating" value="<%= textbook.rating%>" />
   <input type="hidden" name="img" value="<%= textbook.img%>" />
   <input type="hidden" name="isincart" value="false">
-  <input type="hidden" name="isrented" value="true">
+  <input type="hidden" name="isrented" value="false">
   <input type="hidden" name="genre_id" value="<%=textbook.genre_id%>">
   <input type="submit" class="dellink" value="Delete">
   </form>

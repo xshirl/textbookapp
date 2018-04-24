@@ -1,22 +1,17 @@
 function sendGenres(req, res) {
-  res.render('genres/index', {
-    genres: res.locals.genres
+  res.render('genres/index', { //renders genres/index view
+    genres: res.locals.genres //data is genres
   })
 }
 
 function sendTextGenre(req, res) {
-  res.render('genres/show', {
-    genre: res.locals.genre,
-    textbooks: res.locals.textbooks,
-    book: res.locals.book
+  res.render('genres/show', {//renders genres/show view
+    genre: res.locals.genre, //sets genre data = genre
+    textbooks: res.locals.textbooks //sets data = textbooks
   })
 }
 
-// function sendText(req, res) {
-//   res.render('genres/show', {
-//     book: res.locals.book
-//   })
-// }
+
 module.exports = {
   sendGenres,
   sendTextGenre
