@@ -46,7 +46,8 @@ express-session, dotenv
   <input type="hidden" name="isrented" value="false">
   <input type="hidden" name="genre_id" value="<%=textbook.genre_id%>">
   <input type="submit" class="dellink" value="Delete">
-  </form>```
+  </form>
+```
 This updates the isincart column to false so when I update the book, it deletes it
 from the cart. I use the PUT method instead of DELETE method here because I
 don't want to delete it from the entire database. I use DELETE method elsewhere
