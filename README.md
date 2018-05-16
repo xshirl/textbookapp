@@ -1,5 +1,7 @@
 # Textbook Rental App
 
+![Screenshot](./aexus.png)
+
 AEXUS Textbooks:
 I am making a textbook rental app. I have a database of textbooks with two tables: textbooks and genres. Textbook table has an id,
 title, author, image, genre, price columns, rating. Genres table has an id, name, image columns. 
